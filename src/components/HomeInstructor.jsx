@@ -14,7 +14,7 @@ const HomeInstructor = () => {
         async function fetchAssignedLectures() {
             try {
                 let payload = {
-                    instructorId: localStorage.getItem('instructorId')
+                    instructorId: sessionStorage.getItem('instructorId')
                 }
                 const response = await listOfAssignedLectures(payload)
                 console.log(response.response)
@@ -27,7 +27,7 @@ const HomeInstructor = () => {
     }, [])
 
     const handleSwitchToAdminLogin = () => {
-        localStorage.clear();
+        sessionStorage.clear();
         navigate('/adminLogin');
     }
 
@@ -42,7 +42,7 @@ const HomeInstructor = () => {
                         <div className="row mb-2">
                             <div className="col-sm-6">
                                 <h1 className="m-0">
-                                    Hello {localStorage.getItem('name')}
+                                    Hello {sessionStorage.getItem('name')}
                                 </h1>
                             </div>
                             <div className="col-sm-6">

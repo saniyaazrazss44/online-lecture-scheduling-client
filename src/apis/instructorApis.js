@@ -18,7 +18,7 @@ export const listOfAssignedLectures = async ({ instructorId }) => {
     try {
         const reqUrl = `${backendUrl}/listOfAssignedLectures`
         const reqPayload = { instructorId }
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
 
         const config = {
             headers: {

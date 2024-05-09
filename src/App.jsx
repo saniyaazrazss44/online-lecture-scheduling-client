@@ -9,7 +9,7 @@ import HomeInstructor from './components/HomeInstructor'
 
 function App() {
 
-  const user_Id = localStorage.getItem('token')
+  const user_Id = sessionStorage.getItem('token')
 
   return (
     <BrowserRouter>
@@ -17,7 +17,7 @@ function App() {
         <Route path='/admin/home' element={<Home />} />
         <Route path='/instructor/home' element={<HomeInstructor />} />
       </Routes>) : (<Routes>
-        <Route path='/' element={<LoginAdmin />} />
+        <Route path='/*' element={<Navigate to="/adminLogin" />} />
         <Route path='/adminLogin' element={<LoginAdmin />} />
         <Route path='/instructorLogin' element={<LoginInstructor />} />
       </Routes>)

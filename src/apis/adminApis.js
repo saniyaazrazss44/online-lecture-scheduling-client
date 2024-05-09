@@ -16,7 +16,7 @@ export const adminLogin = async ({ username, password }) => {
 export const listOfInstructors = async () => {
     try {
         const reqUrl = `${backendUrl}/listOfInstructors`
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
 
         const config = {
             headers: {
@@ -34,7 +34,7 @@ export const addInstructors = async ({ name, username, password }) => {
     try {
         const reqUrl = `${backendUrl}/addInstructors`
         const reqPayload = { name, username, password }
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
 
         const config = {
             headers: {
@@ -55,7 +55,7 @@ export const addCourses = async ({ name, level, description, image }) => {
     try {
         const reqUrl = `${backendUrl}/addCourses`
         const reqPayload = { name, level, description, image }
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
 
         const config = {
             headers: {
@@ -73,7 +73,7 @@ export const addLectures = async ({ courseId, name }) => {
     try {
         const reqUrl = `${backendUrl}/courses/addLectures`
         const reqPayload = { courseId, name }
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
 
         const config = {
             headers: {
@@ -91,7 +91,7 @@ export const assignLectures = async ({ courseId, instructorId, lectureId, date }
     try {
         const reqUrl = `${backendUrl}/courses/assignLectures`
         const reqPayload = { courseId, instructorId, lectureId, date }
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
 
         const config = {
             headers: {
@@ -110,7 +110,7 @@ export const assignLectures = async ({ courseId, instructorId, lectureId, date }
 export const getListOfAllCourses = async () => {
     try {
         const reqUrl = `${backendUrl}/courses/getListOfAllCourses`
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
 
         const config = {
             headers: {

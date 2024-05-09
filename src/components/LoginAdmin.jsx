@@ -30,7 +30,7 @@ const LoginAdmin = () => {
                 console.log(response)
                 toastr.success(response.message)
 
-                localStorage.setItem('token', response.token);
+                sessionStorage.setItem('token', response.token);
 
                 setTimeout(() => {
                     window.location.href = '/admin/home'
@@ -53,7 +53,7 @@ const LoginAdmin = () => {
     };
 
     const handleSwitchToInstructorLogin = () => {
-        localStorage.clear();
+        sessionStorage.clear();
         navigate('/instructorLogin');
     };
 

@@ -221,7 +221,7 @@ function Home() {
     };
 
     const handleSwitchToInstructorLogin = () => {
-        localStorage.clear();
+        sessionStorage.clear();
         navigate('/instructorLogin');
     };
 
